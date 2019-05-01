@@ -56,7 +56,21 @@ public class MyHeap{
   //converting it into a heap
   //removing the largest value n-1 times (remove places at end of the sub-array).
   public static void heapsort(int[] data){
-
+    //Heapify the data
+    heapify(data);
+    //Keep track of the end of the unsorted array
+    int end = data.length - 1;
+    //Loop through the array...
+    for (int i = 0; i < data.length; i ++){
+      //Swap the end value with the first value in the unsorted array
+      int temp = data[end];
+      data[end] = data[0];
+      data[0] = temp;
+      //Move end up
+      end --;
+      //Push down the new start to the correct place
+      pushDown(data, end, 0);
+    }
   }
 
   public static void main(String[] args){
@@ -67,7 +81,8 @@ public class MyHeap{
 //    for (int i = 0; i < test.length; i ++){
 //      pushUp(test, i);
 //    }
-    heapify(test);
+//    heapify(test);
+    heapsort(test);
     for (int i : test){
       System.out.println(i + "");
     }
