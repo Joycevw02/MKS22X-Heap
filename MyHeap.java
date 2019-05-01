@@ -46,7 +46,10 @@ public class MyHeap{
 
   //- convert the array into a valid heap. [ should be O(n) ]
   public static void heapify(int[] data){
-
+    //Push every node to its correct place
+    for (int i = data.length - 1; i >= 0; i --){
+      pushDown(data, data.length, i);
+    }
   }
 
   //- sort the array [ should be O(nlogn) ] :
@@ -61,9 +64,10 @@ public class MyHeap{
 //    for (int i = test.length - 1; i >= 0; i --){
 //      pushDown(test, test.length, i);
 //    }
-    for (int i = 0; i < test.length; i ++){
-      pushUp(test, i);
-    }
+//    for (int i = 0; i < test.length; i ++){
+//      pushUp(test, i);
+//    }
+    heapify(test);
     for (int i : test){
       System.out.println(i + "");
     }
