@@ -74,7 +74,7 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-    int[] test = {12,16,13,13,7,14,40};
+//    int[] test = {12,16,13,13,7,14,40};
 //    for (int i = test.length - 1; i >= 0; i --){
 //      pushDown(test, test.length, i);
 //    }
@@ -82,9 +82,9 @@ public class MyHeap{
 //      pushUp(test, i);
 //    }
 //    heapify(test);
-    heapsort(test);
-    for (int i : test){
-      System.out.println(i + "");
+//    heapsort(test);
+//    for (int i : test){
+//      System.out.println(i + "");
     }
   }
 }
