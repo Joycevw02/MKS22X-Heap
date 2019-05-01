@@ -48,7 +48,7 @@ public class MyHeap{
   public static void heapify(int[] data){
     //Push every node to its correct place
     for (int i = data.length - 1; i >= 0; i --){
-      pushDown(data, data.length, i);
+      pushDown(data, data.length - 1, i);
     }
   }
 
@@ -74,17 +74,77 @@ public class MyHeap{
   }
 
   public static void main(String[] args){
-//    int[] test = {12,16,13,13,7,14,40};
-//    for (int i = test.length - 1; i >= 0; i --){
-//      pushDown(test, test.length, i);
-//    }
-//    for (int i = 0; i < test.length; i ++){
-//      pushUp(test, i);
-//    }
-//    heapify(test);
-//    heapsort(test);
-//    for (int i : test){
-//      System.out.println(i + "");
+    int[] test1 = {12,16,13,13,7,14,40};
+    int[] test2 = {2,55,88,86,99,100};
+    int[] test3 = {1,235,60,3,34,5,123,4,134};
+    int[] test4 = {1,2,5,13,34,1,3,8,21,89};
+    int[] test5 = {36693,30279,79398,43983,26694,79007,93565,41959,13573};
+    int[] test6 = {800,2306,413,4183,2250};
+    int[] test7 = {61,268,96};
+    int[] test8 = {48,68,1,6};
+    int[] test9 = {1,1,1,1,2,2,3,4,5,6,6,7,8,9,9,12};
+    int[] test10 = {56,7,3,123,654,1235,784,1,672};
+
+    heapify(test1);
+    heapify(test2);
+    heapify(test3);
+    heapify(test4);
+    heapify(test5);
+    heapify(test6);
+    heapify(test7);
+    heapify(test8);
+    heapify(test9);
+    heapify(test10);
+
+    System.out.println("Test 1");
+    for (int i : test1){
+      System.out.print(i + " ");
     }
+    System.out.println();
+    System.out.println("Test 2");
+    for (int i : test2){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 3");
+    for (int i : test3){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 4");
+    for (int i : test4){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 5");
+    for (int i : test5){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 6");
+    for (int i : test6){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 7");
+    for (int i : test7){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 8");
+    for (int i : test8){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 9");
+    for (int i : test9){
+      System.out.print(i + " ");
+    }
+    System.out.println();
+    System.out.println("Test 10");
+    for (int i : test10){
+      System.out.print(i + " ");
+    }
+    System.out.println();
   }
 }
