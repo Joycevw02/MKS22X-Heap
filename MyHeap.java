@@ -92,7 +92,7 @@ public class MyHeap{
       pushDown(data, end, 0);
     }
   }
-
+/*
   public static void main(String[] args){
     int[] test1 = {12,16,13,13,7,14,40};
     int[] test2 = {2,55,88,86,99,100};
@@ -105,16 +105,16 @@ public class MyHeap{
     int[] test9 = {1,1,1,1,2,2,3,4,5,6,6,7,8,9,9,12};
     int[] test10 = {56,7,3,123,654,1235,784,1,672};
 
-    heapify(test1);
-    heapify(test2);
-    heapify(test3);
-    heapify(test4);
-    heapify(test5);
-    heapify(test6);
-    heapify(test7);
-    heapify(test8);
-    heapify(test9);
-    heapify(test10);
+    heapsort(test1);
+    heapsort(test2);
+    heapsort(test3);
+    heapsort(test4);
+    heapsort(test5);
+    heapsort(test6);
+    heapsort(test7);
+    heapsort(test8);
+    heapsort(test9);
+    heapsort(test10);
 
     System.out.println("Test 1");
     for (int i : test1){
@@ -167,4 +167,5 @@ public class MyHeap{
     }
     System.out.println();
   }
+  */
 }
