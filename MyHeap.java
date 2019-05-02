@@ -4,27 +4,47 @@ public class MyHeap{
   //- precondition: index is between 0 and size-1 inclusive
   //- precondition: size is between 0 and data.length-1 inclusive.
   private static void pushDown(int[]data,int size,int index){
-    //Stores the index of the left and right nodes
-    int left = 2 * index + 1;
-    int right = 2 * index + 2;
-    //If the left is in bound and greater than data or if right is in bound and greater than data...
-    if ((left < size && data[index] < data[left]) || (right < size && data[index] < data[right])){
-      //Swap with the larger child
-      if (data[right] > data[left]){
-        int temp = data[right];
-        data[right] = data[index];
-        data[index] = temp;
-        //Call pushDown on the right branch and the next index
-        pushDown(data, size, right);
-        pushDown(data, size, index + 1);
+    while(true){
+      //Stores the index of the left and right children
+      int left = 2 * index + 1;
+      int right = 2 * index + 2;
+      //This means that it reached the end of the heap
+      if( left >= size){
+        break;
       }
-      else{
+      //If right is in bound...
+      if (right < size){
+        //And right value is greater than the parent value...
+        if(data[right] > data[index]){
+          //And the left value is greater than the right value, the swap
+          if (data[left] > data[right]){
+            int temp = data[left];
+          	data[left] = data[index];
+          	data[index] = temp;
+            index = left;
+          }
+          //Else (meaning the right value is greater), swap the right value
+          else{
+            int temp = data[right];
+            data[right] = data[index];
+            data[index] = temp;
+            index = right;
+          }
+        }
+        //This means it is out of bounds
+        else{
+          break;
+        }
+      }
+      //Check the unchecked side
+      else if (data[left] > data[index]){
         int temp = data[left];
         data[left] = data[index];
         data[index] = temp;
-        //Call pushDown on the left branch and the next index
-        pushDown(data, size, left);
-        pushDown(data, size, index + 1);
+        index = left;
+      }
+      else{
+        break;
       }
     }
   }
@@ -47,8 +67,8 @@ public class MyHeap{
   //- convert the array into a valid heap. [ should be O(n) ]
   public static void heapify(int[] data){
     //Push every node to its correct place
-    for (int i = data.length - 1; i >= 0; i --){
-      pushDown(data, data.length - 1, i);
+    for (int i = data.length; i >= 0; i --){
+      pushDown(data, data.length, i);
     }
   }
 
